@@ -6,6 +6,7 @@ Features present -
 2. Alarm off
 3. Ring tone
 4. Map (source and destination distance, time)
+5. Notification
 
 Features to add -
 
