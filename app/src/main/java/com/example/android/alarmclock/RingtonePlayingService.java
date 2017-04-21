@@ -44,21 +44,20 @@ public class RingtonePlayingService extends Service {
                 getSystemService(NOTIFICATION_SERVICE);
         //setup an intent that goes to the Main Activity.
         Intent intent_main_activity = new Intent(this.getApplicationContext(), MainActivity.class);
-
-        //setup a pending intent
-        PendingIntent pending_intent_main_activity = PendingIntent.getActivity(this, 0,
+        //set up a pending intent
+        PendingIntent pending_intent_main_activity = PendingIntent.getActivity(this,0,
                 intent_main_activity, 0);
 
         //make the notification parameter
-        Notification notification_popup = new Notification.Builder(this)
-                .setContentTitle("Alarm is going off")
-                .setContentText("click me!")
+        Notification notify_popup = new Notification.Builder(this).setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("An Alarm is going off")
+                .setContentText("Click me")
                 .setContentIntent(pending_intent_main_activity)
                 .setAutoCancel(true)
                 .build();
 
-        //set up notification call command
-        // notification_manager.notify(0, notification_popup);
+        //set up the notification call command
+        notification_manager.notify(0, notify_popup);
 
 
         //intent string to state id
